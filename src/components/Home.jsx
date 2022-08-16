@@ -32,7 +32,7 @@ function Home() {
   <div className="home">
       <h5 style={{textAlign: 'center', backgroundColor: 'white', color: 'red'}}>
         <br></br>
-        This is a DEMO operating on the Rinkeby Testnet
+        This is a DEMO operating on the Rinkeby Testnet (best on Desktop)
         </h5>
         <p style={{textAlign: 'center'}}><i>For those whitelisted as owners, visit the Owner tab to view and claim sales proceeds in real time.</i></p>
       <div >
