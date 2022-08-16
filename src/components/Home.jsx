@@ -20,9 +20,9 @@ import Container from 'react-bootstrap/Container';
 
 
 const slides = [
-  { url: "https://i.imgur.com/m29sePQ.jpeg"},
-  { url: "https://i.imgur.com/hpK6rOQ.jpeg"},
-  { url: "https://i.imgur.com/IwDjNDE.png"},  
+  { url: "https://i.imgur.com/YiXL345.jpg"},
+  { url: "https://i.imgur.com/igA4ikW.jpeg"},
+  { url: "https://i.imgur.com/kNdQOdl.png"},  
 ];
 
 
@@ -32,16 +32,14 @@ function Home() {
   <div className="home">
       <h5 style={{textAlign: 'center', backgroundColor: 'white', color: 'red'}}>
         <br></br>
-        This is a DEMO operating on the Rinkeby Testnet (best on Desktop)
+        This is a DEMO operating on the Rinkeby Testnet
         </h5>
         <p style={{textAlign: 'center'}}><i>For those whitelisted as owners, visit the Owner tab to view and claim sales proceeds in real time.</i></p>
       <div >
       <ImageSlider slides={slides} />
       </div>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
+      <section id="space">
+        </section>
       <Container>
       <section id="buy">
           <div>
@@ -88,18 +86,21 @@ function Home() {
             In order to purchase the best in packaged hot pot, first connect your wallet and mint a MalaSBT from the MalaSBT smart contract.
             <br></br>
             <br></br>
-            <img src={hiw1} className="d-block mx-auto img-fluid" style={{width: "75%"}}/>
+            <img src={hiw1} class="fat"/>
+            <br></br>
             <br></br>
             Each MalaSBT can be used to claim one serving of TheMala. In addition to receiving the branch at a physical address of your choice, you will also receive $MALA loyalty tokens in your wallet.
             <br></br>
             <br></br>
             <br></br>
-            <img src={hiw2} className="d-block mx-auto img-fluid" style={{width: "75%"}}/>
+            <img src={hiw2} class="fat"/>
+            <br></br>
             <br></br>
             $MALA can be used to help determine the direction of our brand by suggesting and voting on proposals, such as selling new flavors or potentially adding a noodle combo to our product mix.
             <br></br>
             <br></br>
-            <img src={hiw3} className="d-block mx-auto img-fluid" style={{width: "75%"}}/>
+            <img src={hiw3} class="fat"/>
+            <br></br>
             <br></br>
             The MalaSBT will remain in your wallet as a receipt of your purchase. But remember, each MalaSBT can only be used for one claim.
             <br></br>
@@ -108,10 +109,8 @@ function Home() {
             <img src={divider} style={{width: "100%"}}/>
           </Col>
         </Row>
-        <br></br>
-          <br></br>
-          <br></br>
-          <br></br>
+        <section id="space">
+        </section>
         <section id="claim">
           <div>          
               <h5 style={{textAlign: 'center'}}><b>CLAIM YOUR BRANCH</b></h5>
@@ -127,7 +126,7 @@ function Home() {
               <br></br>
               <div style={{textAlign: 'center'}}>
               <b>ADDRESS:</b>&nbsp;&nbsp;
-              <input type="text" name="Address" />&nbsp;&nbsp;
+              <input type="text" class="weird" name="Address" />&nbsp;&nbsp;
               <button style={{marginBottom: 5, padding: 5, paddingLeft: 20, paddingRight: 20}}>REGISTER</button>
               </div>
               <br></br>
@@ -146,11 +145,10 @@ function Home() {
           </div>
         </section>
         </Container>
-        <br></br>
-        <br></br>
-        <br></br>
-        <br></br>
-        <center><img src={product} style={{width: "65%"}}/></center>
+        <section id="space">
+        </section>
+        
+        <center><img src={product} class="ending"/></center>
         <br></br>
 
     </div>
