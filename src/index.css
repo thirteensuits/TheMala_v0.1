@@ -1,0 +1,71 @@
+body {
+  margin: 100;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.navbar_header{
+  display: flex;
+  flex-direction: row;
+}
+#buy{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 35px;
+}
+#claim{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 35px;
+}
+.loginBtn{
+  margin-bottom: 5px;
+  padding: 5px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.background_slider{
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+}
+.SliderStyle{
+  height:500px;
+  width: 100%;
+  position: relative;
+}
+@media screen and (max-width: 510px) {
+  .navbar_header{
+    display: flex;
+    flex-direction: column;
+  }
+  #buy{
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  #claim{
+    display:  flex;
+   flex-direction: column-reverse;
+  }
+  .loginBtn{
+    margin-top: 5px;
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 12px;
+  }
+
+  .SliderStyle{
+    height: 180px;
+    position: relative;
+  }
+}
