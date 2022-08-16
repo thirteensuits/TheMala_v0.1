@@ -16,19 +16,19 @@ function Owner() {
           <h1 class="font-weight-bold">Owner</h1>
             <br></br>
             <p>
-              This area is for Owners -- i.e. those who own a TrunkNFT (eventually we want to build a token-gate)
+              This area is for Owners -- i.e. those who own a OwnerNFT (eventually we want to build a token-gate)
             <br></br>
             <br></br>
-              Owners can check the financial performance of Branch sales (volume and revenue) in real time,
+              Owners can check the sales performance of TheMala (volume and revenue) in real time,
               <br></br>
               and can also claim their share of the cash flow in real time.
               <br></br>
               <br></br>
               The process works as such:
               <br></br>
-              &nbsp;&nbsp;1/ view total ETH balance from BranchSBT sales in the BranchSBT contract;
+              &nbsp;&nbsp;1/ view total ETH balance from MalaSBT sales in the MalaSBT contract;
               <br></br>
-              &nbsp;&nbsp;2/ release ETH from BranchSBT contract to the Payments contract;
+              &nbsp;&nbsp;2/ release ETH from MalaSBT contract to the Payments contract;
               <br></br>
               &nbsp;&nbsp;3/ release ETH payable to Owner from Payments contract to the Owner's wallet. 
               <br></br>
