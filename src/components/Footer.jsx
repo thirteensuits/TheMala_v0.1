@@ -6,7 +6,7 @@ function Footer() {
       <footer class="py-3" style={{backgroundColor: "#bf3f3e"}}>
         <div class="container">
           <p class="m-0 text-center text-white">
-            <a href="https://github.com/thirteensuits/hardbank-frontend-v0.25" target="_blank" rel="noreferrer" style={{color: "white", textDecoration: "underline"}}>
+            <a href="https://github.com/thirteensuits/TheMala_v0.1/" target="_blank" rel="noreferrer" style={{color: "white", textDecoration: "underline"}}>
             GitHub
             </a>
             &nbsp;|&nbsp;
