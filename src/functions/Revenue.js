@@ -106,7 +106,7 @@ return (
 
 {blockchain.account === "" ||
     blockchain.smartContract === null ? (
-<button
+<button style={{padding: 5, paddingLeft: 20, paddingRight: 20}}
 onClick={(e) => {
 e.preventDefault();
 dispatch(connect());
@@ -128,7 +128,7 @@ Confirm Owner status to View Sales Performance
 <br></br>
 
 
-        <button onClick={() => {dispatch(draw)}}>Release to Payments</button>
+        <button style={{padding: 5, paddingLeft: 20, paddingRight: 20}} onClick={() => {dispatch(draw)}}>Release to Payments</button>
 
 
 </>
