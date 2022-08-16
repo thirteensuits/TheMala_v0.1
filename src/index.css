@@ -26,6 +26,15 @@ code {
   grid-template-columns: 1fr 1fr;
   gap: 35px;
 }
+#space{
+  padding-top: 85px;
+}
+.fat{
+  width: 50%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
 .loginBtn{
   margin-bottom: 5px;
   padding: 5px;
@@ -38,8 +47,11 @@ code {
   background-size: cover;
   background-position: center;
 }
+.ending{
+  width:65%;
+}
 .SliderStyle{
-  height:500px;
+  height:600px;
   width: 100%;
   position: relative;
 }
@@ -56,6 +68,12 @@ code {
     display:  flex;
    flex-direction: column-reverse;
   }
+  #space{
+    padding-top: 50px;
+  }
+  .fat{
+    width: 100%;
+  }
   .loginBtn{
     margin-top: 5px;
     padding: 5px;
@@ -63,9 +81,18 @@ code {
     padding-right: 10px;
     font-size: 12px;
   }
-
+  .weird{
+    margin-bottom: 20px;
+  }
+  .ending{
+    width:100%;
+  }
   .SliderStyle{
-    height: 180px;
+    height: 220px;
     position: relative;
+  }
+  .owner{
+    padding-left: 20px;
+    padding-right: 20px;
   }
 }
