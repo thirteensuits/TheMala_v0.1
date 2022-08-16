@@ -13,6 +13,10 @@ function Footer() {
             <a href="https://twitter.com/TheMala_xyz" target="_blank" rel="noreferrer" style={{color: "white", textDecoration: "underline"}}>
             Twitter
             </a>
+            &nbsp;|&nbsp;
+            <a href="https://www.themugle.tw" target="_blank" rel="noreferrer" style={{color: "white", textDecoration: "underline"}}>
+            Parent Brand
+            </a>
           <br></br>
             Copyright &copy; Algebra 2022
           </p>
