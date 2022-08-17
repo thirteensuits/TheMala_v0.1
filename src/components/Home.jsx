@@ -142,6 +142,8 @@ function Home() {
           </div>
           <div>
           <img src={img2} style={{width: "100%"}}/>
+          <section id="split">
+          </section>
           </div>
         </section>
         </Container>
