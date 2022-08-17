@@ -90,7 +90,7 @@ We injectively represent TheMala with a unique SBT smart contract address. These
 Just as a barcode is scanned to initiate the purchase of a product, the purchasing journey under our protocol begins with the purchaser minting an SBT from the aforementioned SBT smart contract address. Both sides of this transaction are consequently recorded on the blockchain — (i) the cryptocurrency used to mint (or pay for) the SBT (or product), and (ii) the SBT (or representation of the product) transferred to the purchaser in exchange for the payment. This is a full-chain tranasction.
 
 <p align="center">
-<img src="HIW1.jpg" width="50%" class="center">
+<img src="HIW1.png" width="50%" class="center">
 </p>
 
 Upon completing the full-chain transaction, the purchaser will then want to claim the physical product. It is essential that each SBT that is minted can only claim one product. We accomplish this by having our claim process mimic a token airdrop exclusive to NFT holders -- for example, the ApeCoin airdrop for BAYC/MAYC holders -- which tracks the status of whether or not an NFT has already been used to claim tokens from an airdrop.
@@ -98,7 +98,7 @@ Upon completing the full-chain transaction, the purchaser will then want to clai
 In addition to providing the physical address to receive the product, the purchaser must also provide the merchant with the index number of the SBT that was minted to complete the claim process. In order for this process to execute, the purchaser must be holding the SBT which corresponds to the index number that was provided. This exchange will ensure that the index number of each SBT that has completed a claim is been recorded on the blockchain.
 
 <p align="center">
-<img src="HIW2.jpg" width="50%" class="center">
+<img src="HIW2.png" width="50%" class="center">
 </p>
 
 If the same index number initiates a second claim, then the process will fail, ensuring that each minted SBT can only claim one product.
@@ -106,7 +106,7 @@ If the same index number initiates a second claim, then the process will fail, e
 Since it mimics an airdrop, our claim function also provides an opportunity for merchants to reward its customers with loyalty tokens, sent to the purchaser at time of claim. The precise functionality of the loyalty token can be determined by the merchant, and having this option is a great way to encourage repeat purchases, word-of-mouth marketing, and build a community for a product.
 
 <p align="center">
-<img src="HIW3.jpg" width="50%" class="center">
+<img src="HIW3.png" width="50%" class="center">
 </p>
 
 ## Owner.jsx
@@ -116,13 +116,13 @@ This is page is for the product owners to see the proceeds from the sale of the 
 The proceeds from minting the SBTs are stored in the SBT's smart contract. These proceeds can be withdrawn to a payment smart contract by the product owners.
 
 <p align="center">
-<img src="HIW6.jpg" width="50%" class="center">
+<img src="HIW5.jpg" width="50%" class="center">
 </p>
 
 In the payment smart contract, the product owners can choose to divvy up the proceeds amongst themselves to their choosing. The implications of this transparency and functionality are easy to imagine, and are consequential to fundraising, investing, compensation, payment cycles, and other aspects of 'real' business.
 
 <p align="center">
-<img src="HIW5.jpg" width="50%" class="center">
+<img src="HIW6.jpg" width="50%" class="center">
 </p>
 
 Taken as a whole, these functionalities provide the capacity to illuminate not only the relationship between the purchaser and the merchant, but also that of the product operator and the product owner. The resulting value-adds will spur more efficient allocation of capital and push for the development of better products, providing a net positive for the market as a whole.
