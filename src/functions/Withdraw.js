@@ -100,7 +100,7 @@ const Withdraw = () => {
 
     {blockchain.account === "" ||
     blockchain.smartContract === null ? (
-        <button
+        <button style={{padding: 5, paddingLeft: 20, paddingRight: 20}}
           onClick={(e) => {
             e.preventDefault();
             dispatch(connect3());
@@ -115,7 +115,7 @@ const Withdraw = () => {
 <br></br>
 <br></br>
 
-         <button onClick={() => {dispatch(wdraw)}}>Release to Owner Account</button>
+         <button style={{padding: 5, paddingLeft: 20, paddingRight: 20}} onClick={() => {dispatch(wdraw)}}>Release to Owner Account</button>
 
       </>
     )}
