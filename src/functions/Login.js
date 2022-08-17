@@ -1,36 +1,21 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { connect3 } from "../redux/blockchain/blockchainActions3";
-import store3 from "../redux/store3";
+import { connect2 } from "../redux/blockchain/blockchainActions2";
+import store4 from "../redux/store4";
 
 
-
-const Withdraw = () => {
+const Login = () => {
   const dispatch = useDispatch();
   const blockchain = useSelector((state) => state.blockchain);
   const data = useSelector((state) => state.data);
   const [CONFIG, SET_CONFIG] = useState({
-    PAYMENT_ADDRESS: "",
+    TOKEN_ADDRESS: "",
     NETWORK: {
       NAME: "",
       SYMBOL: "",
       ID: 0,
     },
-});
-
-
-  const wdraw = () => {
-    let gasLimit = 285000;
-    let totalGasLimit = String(gasLimit);
-    console.log("Gas limit: ", totalGasLimit);
-    blockchain.smartContract.methods
-      .release(blockchain.account)
-      .send({
-        gasLimit: String(totalGasLimit),
-        to: CONFIG.PAYMENT_ADDRESS,
-        from: blockchain.account,
-      })
-  };
+  });
 
   const fetchDataRequest = () => {
     return {
@@ -44,13 +29,13 @@ const Withdraw = () => {
       payload: payload,
     };
   };
-  
-   const fetchData = () => {
+
+  const fetchData = () => {
     return async (dispatch) => {
       dispatch(fetchDataRequest());
-        let releasable = await store3
+        let balanceOf = await store4
           .getState()
-          .blockchain.smartContract.methods.releasable(blockchain.account)
+          .blockchain.smartContract.methods.balanceOf(blockchain.account)
           .call();
         // let cost = await store
         //   .getState()
@@ -59,7 +44,7 @@ const Withdraw = () => {
   
         dispatch(
           fetchDataSuccess({
-            releasable,
+            balanceOf,
             // cost,
           })
         );
@@ -72,6 +57,7 @@ const Withdraw = () => {
     }
   };
 
+
   const getConfig = async () => {
     const configResponse = await fetch("/config/config.json", {
       headers: {
@@ -83,8 +69,8 @@ const Withdraw = () => {
     SET_CONFIG(config);
   };
 
+  const kan = data.balanceOf / 1000000000000000000 ;
 
-  const ban = data.releasable;
 
   useEffect(() => {
     getConfig();
@@ -96,32 +82,22 @@ const Withdraw = () => {
 
 
   return (
-    <div>
-
-    {blockchain.account === "" ||
+      <div>
+        {blockchain.account === "" ||
     blockchain.smartContract === null ? (
-        <button style={{padding: 5, paddingLeft: 20, paddingRight: 20}}
-          onClick={(e) => {
-            e.preventDefault();
-            dispatch(connect3());
-            getData();
-          }}
-        >
-          Claim Payments
-        </button>
-    ) : (
-      <>
-         <b>Available Balance:</b> <b>{ban/1000000000000000000}</b>
-<br></br>
-<br></br>
+        <button className="loginBtn" style={{marginBottom: 5, padding: 5, paddingLeft: 20, paddingRight: 20}} onClick={() => {dispatch(connect2())}}>Connect w/ MetaMask</button>
+        ) : (
+          <>
+        <p style={{ color: "white", textAlign: "center", marginBottom: 10 }}><b>CONNECTED!</b>
+        <br></br>
 
-         <button style={{padding: 5, paddingLeft: 20, paddingRight: 20}} onClick={() => {dispatch(wdraw)}}>Release to Owner Account</button>
-
-      </>
+        $MALA BALANCE: {kan} $MALA
+        </p>
+        </>
     )}
 
       </div>
   );
 }
 
-export default Withdraw;
+export default Login;
