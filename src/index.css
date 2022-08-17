@@ -71,6 +71,9 @@ code {
   #space{
     padding-top: 50px;
   }
+  #split{
+    padding-top: 20px;
+  }
   .fat{
     width: 100%;
   }
