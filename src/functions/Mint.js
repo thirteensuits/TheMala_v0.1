@@ -5,6 +5,8 @@ import { connect } from "../redux/blockchain/blockchainActions";
 const Mint = () => {
   const dispatch = useDispatch();
   const blockchain = useSelector((state) => state.blockchain);
+  const [claimingNft, setClaimingNft] = useState(false);
+  const [feedback, setFeedback] = useState("");
   const [CONFIG, SET_CONFIG] = useState({
     BRANCH_SBT_ADDRESS: "",
     NETWORK: {
@@ -30,6 +32,7 @@ const Mint = () => {
     let totalGasLimit = String(gasLimit);
     console.log("Cost: ", totalCostWei);
     console.log("Gas limit: ", totalGasLimit);
+    setClaimingNft(true);
     blockchain.smartContract.methods
       .mint(blockchain.account, 1)
       .send({
@@ -38,6 +41,16 @@ const Mint = () => {
         from: blockchain.account,
         value: totalCostWei,
       })
+      .once("error", (err) => {
+        console.log(err);
+        setFeedback("Try again please!!");
+        setClaimingNft(false);
+      })
+      .then((receipt) => {
+        console.log(receipt);
+        setFeedback("Success!! Congratulations on your purchase.");
+        setClaimingNft(false);
+      });
   };
 
   const getConfig = async () => {
@@ -64,9 +77,18 @@ const Mint = () => {
         <button style={{padding: 5, paddingLeft: 20, paddingRight: 20}} onClick={() => {dispatch(connect())}}>Connect your Wallet to Purchase TheMala</button>
         ) : (
           <>
-        <button style={{padding: 5, paddingLeft: 20, paddingRight: 20}} onClick={() => {dispatch(claimNFTs)}}>Purchase TheMala!!</button>
+
+        <button style={{padding: 5, paddingLeft: 20, paddingRight: 20}} onClick={() => {dispatch(claimNFTs)}}>{claimingNft ? "Purchasing..." : "Purchase TheMala!!"}</button>
         </>
     )}
+          <br></br>
+          <br></br>
+              <p style={{textAlign: 'center', color: 'red'}}><b>{feedback}</b></p>
+            {blockchain.errorMsg !== "" ? (
+          <>
+          <p style={{textAlign: 'center', color: 'red'}}><b>{blockchain.errorMsg}</b></p>
+          </>
+        ) : null}
 
       </div>
   );
