@@ -126,6 +126,7 @@ function Home() {
               <br></br>
               2/ To complete the process, click "Claim", and then click "Confirm" to confirm the claim.
               <br></br>
+              <br></br>
               <Provider store={store2}>
               <Reward />
               </Provider>
