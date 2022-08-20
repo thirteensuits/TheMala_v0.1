@@ -6,6 +6,8 @@ import { fetchData } from "../redux/data/dataActions";
 const Reward = () => {
   const dispatch = useDispatch();
   const blockchain = useSelector((state) => state.blockchain);
+  const [claimingNft, setClaimingNft] = useState(false);
+  const [feedback, setFeedback] = useState("");
   const [CONFIG, SET_CONFIG] = useState({
     TOKEN_ADDRESS: "",
     NETWORK: {
@@ -19,12 +21,23 @@ const Reward = () => {
     let gasLimit = CONFIG.GAS_LIMIT;
     let totalGasLimit = String(gasLimit * mintAmount);
     console.log("Gas limit: ", totalGasLimit);
+    setClaimingNft(true);
     blockchain.smartContract.methods
       .claim(mintAmount)
       .send({
         gasLimit: String(totalGasLimit),
         to: CONFIG.TOKEN_ADDRESS,
         from: blockchain.account,
+      })
+      .once("error", (err) => {
+        console.log(err);
+        setFeedback("Try again please!!");
+        setClaimingNft(false);
+      })
+      .then((receipt) => {
+        console.log(receipt);
+        setFeedback("Success!! Congratulations on your claim.");
+        setClaimingNft(false);
       });
   };
 
@@ -69,7 +82,7 @@ const Reward = () => {
                         getData();
                       }}
                     >
-                      CLAIM
+                      Claim
                     </button>
                 ) : (
                   <>
@@ -87,10 +100,21 @@ const Reward = () => {
                           getData();
                         }}
                       >
-                        CONFIRM
+                        {claimingNft ? "Claiming..." : "Confirm"}
                       </button>
                   </>
                 )}
+
+          <br></br>
+          <br></br>
+          <p style={{textAlign: 'center', color: 'red'}}><b>{feedback}</b></p>
+
+          {blockchain.errorMsg !== "" ? (
+          <>
+
+              <p style={{textAlign: 'center', color: 'red'}}><b> {blockchain.errorMsg}</b></p>
+          </>
+        ) : null}
       </div>
   );
 }
