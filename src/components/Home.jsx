@@ -127,7 +127,7 @@ function Home() {
               <div style={{textAlign: 'center'}}>
               <b>ADDRESS:</b>&nbsp;&nbsp;
               <input type="text" class="weird" name="Address" />&nbsp;&nbsp;
-              <button style={{marginBottom: 5, padding: 5, paddingLeft: 20, paddingRight: 20}}>REGISTER</button>
+              <button style={{marginBottom: 5, padding: 5, paddingLeft: 20, paddingRight: 20}}>Register</button>
               </div>
               <br></br>
               3/ To complete the process, click "Claim", then input your index number, and then click "Confirm" to confirm the claim.
