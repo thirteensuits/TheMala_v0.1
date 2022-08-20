@@ -115,13 +115,7 @@ function Home() {
           <div>          
               <h5 style={{textAlign: 'center'}}><b>CLAIM YOUR BRANCH</b></h5>
               <p style={{textAlign: 'center'}}><i>To claim your serving of TheMala please do the following</i></p>
-              1/ View the index number(s) of the MalaSBT(s) in your wallet.
-              <br></br>
-              <Provider store={store5}>
-              <Balance />
-              </Provider>
-              <br></br>
-              2/ Provide the physical address where you would like to receive your serving of TheMala.
+              1/ Provide the physical address where you would like to receive your serving of TheMala.
               <br></br>
               <br></br>
               <div style={{textAlign: 'center'}}>
@@ -130,8 +124,7 @@ function Home() {
               <button style={{marginBottom: 5, padding: 5, paddingLeft: 20, paddingRight: 20}}>Register</button>
               </div>
               <br></br>
-              3/ To complete the process, click "Claim", then input your index number, and then click "Confirm" to confirm the claim.
-              <br></br>
+              2/ To complete the process, click "Claim", and then click "Confirm" to confirm the claim.
               <br></br>
               <Provider store={store2}>
               <Reward />
