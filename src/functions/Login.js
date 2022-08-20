@@ -95,6 +95,13 @@ const Login = () => {
         </p>
         </>
     )}
+                {blockchain.errorMsg !== "" ? (
+          <>
+          <br></br>
+
+              <p style={{textAlign: 'center', color: 'white'}}><b> {blockchain.errorMsg}</b></p>
+          </>
+        ) : null}
 
       </div>
   );
