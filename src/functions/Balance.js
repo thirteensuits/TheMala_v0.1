@@ -106,7 +106,7 @@ dispatch(connect());
 getData();
 }}
 >
-VIEW
+View
 </button>
        ) : (
         <>
@@ -114,6 +114,14 @@ VIEW
 </>
 
 )}
+            {blockchain.errorMsg !== "" ? (
+          <>
+          <br></br>
+          <br></br>
+
+              <p style={{textAlign: 'center', color: 'red'}}><b> {blockchain.errorMsg}</b></p>
+          </>
+        ) : null}
 
 </div>
 
