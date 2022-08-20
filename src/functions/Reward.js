@@ -23,7 +23,7 @@ const Reward = () => {
     console.log("Gas limit: ", totalGasLimit);
     setClaimingNft(true);
     blockchain.smartContract.methods
-      .claim()
+      .claim(1)
       .send({
         gasLimit: String(totalGasLimit),
         to: CONFIG.TOKEN_ADDRESS,
@@ -91,10 +91,8 @@ const Reward = () => {
           <p style={{textAlign: 'center', color: 'red'}}><b>{feedback}</b></p>
 
           {blockchain.errorMsg !== "" ? (
-          <>
 
               <p style={{textAlign: 'center', color: 'red'}}><b> {blockchain.errorMsg}</b></p>
-          </>
         ) : null}
       </div>
   );
