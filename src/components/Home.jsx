@@ -136,7 +136,6 @@ function Home() {
               <Provider store={store2}>
               <Reward />
               </Provider>
-              <br></br>
               Upon completion, you will receive 10 $MALA loyalty tokens in your Web3 wallet -- but remember, each BranchSBT can only initiate one claim!
               <br></br>
           </div>
