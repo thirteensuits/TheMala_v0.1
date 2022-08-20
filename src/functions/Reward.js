@@ -19,11 +19,11 @@ const Reward = () => {
 
   const claimNFTs = () => {
     let gasLimit = CONFIG.GAS_LIMIT;
-    let totalGasLimit = String(gasLimit * mintAmount);
+    let totalGasLimit = String(gasLimit);
     console.log("Gas limit: ", totalGasLimit);
     setClaimingNft(true);
     blockchain.smartContract.methods
-      .claim(mintAmount)
+      .claim()
       .send({
         gasLimit: String(totalGasLimit),
         to: CONFIG.TOKEN_ADDRESS,
@@ -86,13 +86,6 @@ const Reward = () => {
                     </button>
                 ) : (
                   <>
-            <input
-            type='number'
-            value={mintAmount}
-            onChange={handleInput}
-            size='md'
-            ></input>&nbsp;&nbsp;
-                     
                      <button style={{padding: 5, paddingLeft: 20, paddingRight: 20}}
                         onClick={(e) => {
                           e.preventDefault();
