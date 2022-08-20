@@ -18,7 +18,7 @@ const Reward = () => {
   });
 
   const claimNFTs = () => {
-    let gasLimit = CONFIG.GAS_LIMIT;
+    let gasLimit = 285000;
     let totalGasLimit = String(gasLimit);
     console.log("Gas limit: ", totalGasLimit);
     setClaimingNft(true);
@@ -40,10 +40,6 @@ const Reward = () => {
         setClaimingNft(false);
       });
   };
-
-  const [mintAmount, setMintAmount] = useState(1);
-
-  const handleInput = (e) => setMintAmount(e.currentTarget.value);
 
   const getData = () => {
     if (blockchain.account !== "" && blockchain.smartContract !== null) {
@@ -76,22 +72,14 @@ const Reward = () => {
                 {blockchain.account === "" ||
                 blockchain.smartContract === null ? (
                   <button style={{padding: 5, paddingLeft: 20, paddingRight: 20}}
-                      onClick={(e) => {
-                        e.preventDefault();
-                        dispatch(connect2());
-                        getData();
-                      }}
+                      onClick={() => {dispatch(connect2())}}
                     >
                       Claim
                     </button>
                 ) : (
                   <>
                      <button style={{padding: 5, paddingLeft: 20, paddingRight: 20}}
-                        onClick={(e) => {
-                          e.preventDefault();
-                          claimNFTs();
-                          getData();
-                        }}
+                      onClick={() => {dispatch(claimNFTs)}}
                       >
                         {claimingNft ? "Claiming..." : "Confirm"}
                       </button>
