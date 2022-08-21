@@ -34,9 +34,9 @@ const Balance2 = () => {
    const fetchData = () => {
     return async (dispatch) => {
       dispatch(fetchDataRequest());
-        let claimAmount = await store5
+        let hasClaimed = await store5
           .getState()
-          .blockchain.smartContract.methods.claimAmount()
+          .blockchain.smartContract.methods.hasClaimed(blockchain.account)
           .call();
         // let cost = await store
         //   .getState()
@@ -45,7 +45,7 @@ const Balance2 = () => {
   
         dispatch(
           fetchDataSuccess({
-            claimAmount,
+            hasClaimed,
             // cost,
           })
         );
@@ -71,7 +71,7 @@ const Balance2 = () => {
 
 
 
-  const lan = data.claimAmount;
+  const lan = data.hasClaimed;
 
   useEffect(() => {
     getConfig();
