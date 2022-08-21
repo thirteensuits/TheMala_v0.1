@@ -5,10 +5,12 @@ import Col from 'react-bootstrap/Col';
 import Mint from '../functions/Mint';
 import ImageSlider from '../functions/ImageSlider';
 import Balance from '../functions/Balance';
+import Balance2 from '../functions/Balance2';
 import Reward from '../functions/Reward';
 import store from "../redux/store";
 import store2 from "../redux/store2";
 import store5 from "../redux/store5";
+import store7 from "../redux/store7";
 import img from './images/themala.gif';
 import img2 from './images/themala.png';
 import hiw1 from './images/HIW1.png';
@@ -132,6 +134,14 @@ function Home() {
               </Provider>
               Upon completion, you will receive 10 $MALA loyalty tokens in your Web3 wallet -- but remember, each BranchSBT can only initiate one claim!
               <br></br>
+              <br></br>
+              <Provider store={store7}>
+              <Balance />
+              </Provider>
+              <br></br>
+              <Provider store={store5}>
+              <Balance2 />
+              </Provider>
           </div>
           <div>
           <img src={img2} style={{width: "100%"}}/>
