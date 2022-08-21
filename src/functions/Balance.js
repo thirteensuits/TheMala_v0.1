@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { connect } from "../redux/blockchain/blockchainActions";
-import store5 from "../redux/store5";
+import { connect5 } from "../redux/blockchain/blockchainActions5";
+import store7 from "../redux/store7";
 
 
 const Balance = () => {
@@ -27,6 +27,7 @@ const Balance = () => {
   });
 
 
+
   const fetchDataRequest = () => {
     return {
       type: "CHECK_DATA_REQUEST",
@@ -43,9 +44,9 @@ const Balance = () => {
    const fetchData = () => {
     return async (dispatch) => {
       dispatch(fetchDataRequest());
-        let walletOfOwner = await store5
+        let balanceOf = await store7
           .getState()
-          .blockchain.smartContract.methods.walletOfOwner(blockchain.account)
+          .blockchain.smartContract.methods.balanceOf(blockchain.account)
           .call();
         // let cost = await store
         //   .getState()
@@ -54,7 +55,7 @@ const Balance = () => {
   
         dispatch(
           fetchDataSuccess({
-            walletOfOwner,
+            balanceOf,
             // cost,
           })
         );
@@ -78,13 +79,9 @@ const Balance = () => {
     SET_CONFIG(config);
   };
 
-  const ban = data.walletOfOwner;
-  const tan = ban.map((number) =>
-  <li>{number}</li>
-);
 
 
-
+  const kan = data.balanceOf;
 
   useEffect(() => {
     getConfig();
@@ -96,28 +93,21 @@ const Balance = () => {
 
 return (
   <div style={{textAlign: 'center'}}>
-  <br></br>
+  <b>SBTs Minted: </b>
 {blockchain.account === "" ||
     blockchain.smartContract === null ? (
 <button style={{padding: 5, paddingLeft: 20, paddingRight: 20}}
-onClick={(e) => {
-e.preventDefault();
-dispatch(connect());
-getData();
-}}
->
+onClick={() => {dispatch(connect5())}}>
 View
 </button>
        ) : (
         <>
-<b>MalaSBT Index Number:</b>  {tan}
+<b>{kan}</b>
 </>
 
 )}
             {blockchain.errorMsg !== "" ? (
           <>
-          <br></br>
-          <br></br>
 
               <p style={{textAlign: 'center', color: 'red'}}><b> {blockchain.errorMsg}</b></p>
           </>
