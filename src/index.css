@@ -51,7 +51,7 @@ code {
   width:65%;
 }
 .SliderStyle{
-  width: 100%;
+  width: 80%;
   position: relative;
 }
 @media screen and (max-width: 510px) {
